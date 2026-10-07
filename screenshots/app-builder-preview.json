@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "نوروسینا | نمونه پروژه‌ها",
+      "hasCanvas": false,
+      "bodyTextLen": 4302,
+      "bodyTextHash": "eb263db42221ffd77312fd77e0fb44abedf6343b8d68c6b2b3d9e962fcb7544b",
+      "bodyTextPrefix": "رفتن به محتوا نوروسینا NEUROSINA توانمندی‌ها پروژه‌ها از ایده تا",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "نوروسینا | نمونه پروژه‌ها",
+      "hasCanvas": false,
+      "bodyTextLen": 4219,
+      "bodyTextHash": "113c0ebcc7c003ccfa3da5760af7063f08fd20ee7be5453f881311d1aa3b4345",
+      "bodyTextPrefix": "رفتن به محتوا نوروسینا NEUROSINA NEUROSINA / PROJECT PORTFOLIO ه",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

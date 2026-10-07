@@ -1,0 +1,1 @@
+import{u as e}from"./index-SXdG4oU-.js";import{t}from"./Portfolio-DV1WuIgG.js";var n=e();function r(){return(0,n.jsx)(t,{mode:`embedded`})}export{r as component};
