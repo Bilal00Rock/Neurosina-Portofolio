@@ -1,5 +1,6 @@
 import { Container } from "@/components/Container";
 import { Reveal } from "@/components/Reveal";
+import { company } from "@/data/site";
 
 export function Closing() {
   return (
@@ -7,13 +8,15 @@ export function Closing() {
       <Container>
         <Reveal>
           <div className="max-w-3xl">
-            <p className="text-xs font-medium tracking-label text-accent">NEUROSINA</p>
+            <p className="text-xs font-medium tracking-label text-accent" dir="ltr">
+              {company.nameEn.toUpperCase()}
+            </p>
             <p className="mt-4 text-title text-fg">
               ساخت محصول یعنی رساندن داده، مدل و نرم‌افزار به دست کاربر.
             </p>
             <p className="mt-4 max-w-2xl text-muted">
-              این مجموعه نشان می‌دهد نوروسینا می‌تواند مسئله واقعی را به سامانه پایش،
-              پلتفرم هوشمند، برنامه دسکتاپ و نرم‌افزار سازمانی تبدیل کند.
+              در این مجموعه، نمونه‌هایی از کار ما روی سامانه‌های نرم‌افزاری، محصولات
+              هوشمند و ابزارهای دیجیتال را می‌بینید.
             </p>
           </div>
         </Reveal>

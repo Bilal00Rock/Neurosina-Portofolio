@@ -10,9 +10,32 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-4 max-w-sm text-sm leading-normal text-muted">
-            {company.legalName} با نام تجاری {company.nameFa}؛ هوش مصنوعی، داده و
-            مهندسی نرم‌افزار برای ساخت محصولات واقعی.
+            {company.description}
           </p>
+          {company.contactEmail ? (
+            <a
+              className="mt-3 inline-block text-sm text-accent underline-offset-4 hover:underline"
+              href={`mailto:${company.contactEmail}`}
+            >
+              {company.contactEmail}
+            </a>
+          ) : null}
+          {company.socialLinks.length ? (
+            <ul className="mt-3 flex flex-wrap gap-4">
+              {company.socialLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    className="text-sm text-muted underline-offset-4 hover:text-fg hover:underline"
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
         <div>
           <p className="text-xs tracking-label text-subtle">بخش‌ها</p>
@@ -38,7 +61,7 @@ export function Footer() {
         <div>
           <p className="text-xs tracking-label text-subtle">ماژول نمونه‌کار</p>
           <p className="mt-3 text-sm leading-normal text-muted">
-            این Prototype یک نمونه از بخشی است که می‌تواند به سایت نوروسینا اضافه شود.
+            این نمونه‌کار، پروژه‌ها و مسیر ساخت آن‌ها را در یک مجموعه گردآوری می‌کند.
           </p>
         </div>
       </Container>

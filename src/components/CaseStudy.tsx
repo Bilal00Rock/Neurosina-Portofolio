@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { getAdjacentProjects, type Project } from "@/data/projects";
 import { easeOutExpo } from "@/lib/motion";
@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/Container";
 import { MediaGallery, MediaHero } from "@/components/MediaGallery";
 import { Pipeline } from "@/components/Pipeline";
-import { Reveal } from "@/components/Reveal";
 
 type TocItem = { id: string; n: string; label: string };
 
@@ -95,6 +94,22 @@ export function CaseStudy({ project }: { project: Project }) {
             <p className="mt-3 max-w-2xl text-base leading-normal text-fg">
               {project.shortDescription}
             </p>
+            {project.status === "placeholder" ? (
+              <p className="mt-4 w-fit rounded-sm border border-border bg-surface px-3 py-2 text-sm text-muted">
+                اطلاعات و تصاویر این پروژه هنوز تکمیل نشده‌اند.
+              </p>
+            ) : null}
+            {project.links?.officialWebsite ? (
+              <a
+                href={project.links.officialWebsite.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-sm bg-accent px-4 py-2 text-sm font-medium text-accent-fg transition-colors hover:bg-accent-hover"
+              >
+                {project.links.officialWebsite.label}
+                <ExternalLink className="size-4" aria-hidden="true" />
+              </a>
+            ) : null}
             <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4 text-sm">
               <div>
                 <dt className="text-xs tracking-label text-subtle">نقش</dt>

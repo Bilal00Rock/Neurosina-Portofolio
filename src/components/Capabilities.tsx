@@ -11,7 +11,7 @@ export function Capabilities() {
         <SectionHeader
           kicker="۰۲ / CAPABILITIES"
           title="از داده تا محصول"
-          description="نوروسینا محصول را از نقطه شروع داده تا نرم‌افزار قابل استفاده می‌سازد. هوش مصنوعی در این مسیر یک لایه جدا نیست؛ بخشی از محصول است."
+          description="ما از داده و شناخت مسئله تا ساخت نرم‌افزار قابل استفاده پیش می‌رویم؛ هوش مصنوعی در این مسیر بخشی از محصول است."
         />
 
         <div className="mt-10 overflow-x-auto pb-2">

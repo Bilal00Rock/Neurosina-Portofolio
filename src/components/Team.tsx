@@ -10,7 +10,7 @@ export function Team() {
         <SectionHeader
           kicker="۰۴ / DELIVERY"
           title="از ایده تا اجرا"
-          description="ساخت محصول در نوروسینا حاصل هم‌نشینی چند تخصص است: شناخت مسئله، طراحی سامانه، ساخت مدل، و تبدیل آن به رابطی که کاربر بتواند با آن کار کند."
+          description="ما با کنار هم گذاشتن شناخت مسئله، طراحی سامانه، ساخت مدل و توسعه رابط، مسیر ساخت محصول را پیش می‌بریم."
         />
         <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {disciplines.map((item, index) => {

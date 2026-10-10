@@ -15,7 +15,7 @@ export function ProjectGrid({
           <SectionHeader
             kicker="۰۳ / PROJECTS"
             title="محصولات واقعی، مسیر کامل"
-            description="هر پروژه از یک مسئله مشخص شروع شده، با داده و نرم‌افزار پیش رفته، و به محصولی قابل استفاده رسیده است."
+            description="در اینجا پروژه‌های منتخب و مسیر ساخت آن‌ها را، بر پایه اطلاعات موجود، معرفی می‌کنیم."
           />
         ) : null}
         <div className={heading ? "mt-12 grid gap-5 lg:grid-cols-2" : "grid gap-5 lg:grid-cols-2"}>

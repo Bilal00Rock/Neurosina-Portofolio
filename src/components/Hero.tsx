@@ -24,7 +24,7 @@ export function Hero() {
               className="w-fit text-xs font-medium tracking-label text-accent"
               dir="ltr"
             >
-              {company.kicker}
+              {company.nameEn.toUpperCase()} / PROJECT PORTFOLIO
             </motion.p>
             <motion.h1
               variants={reveal}
@@ -76,12 +76,11 @@ export function EmbeddedIntro() {
     <section className="border-b border-border pt-24 pb-12">
       <Container>
         <p className="text-xs font-medium tracking-label text-accent" dir="ltr">
-          NEUROSINA / PROJECTS
+          {company.nameEn.toUpperCase()} / PROJECTS
         </p>
-        <h1 className="mt-4 max-w-2xl text-display text-fg">پروژه‌های نوروسینا</h1>
+        <h1 className="mt-4 max-w-2xl text-display text-fg">پروژه‌های منتخب</h1>
         <p className="mt-4 max-w-xl text-muted">
-          این بخش برای ادغام در وب‌سایت اصلی طراحی شده است و مجموعه پروژه‌های تأییدشده
-          را نمایش می‌دهد.
+          این بخش برای نمایش مجموعه‌ای از پروژه‌های نرم‌افزاری و دیجیتال طراحی شده است.
         </p>
         <div className="mt-6">
           <Button asChild variant="secondary">

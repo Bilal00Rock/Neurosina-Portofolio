@@ -79,7 +79,7 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-bg/95">
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Link to="/" aria-label={company.nameFa} onClick={() => setOpen(false)}>
+        <Link to="/" aria-label={company.nameEn} onClick={() => setOpen(false)}>
           <Logo />
         </Link>
         <nav className="hidden items-center gap-7 lg:flex" aria-label="ناوبری اصلی">

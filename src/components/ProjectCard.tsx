@@ -13,6 +13,7 @@ export function ProjectCard({
   index?: number;
 }) {
   const reduced = useReducedMotion();
+  const coverMedia = project.media.find((media) => media.src === project.cover);
 
   return (
     <motion.article
@@ -32,13 +33,28 @@ export function ProjectCard({
         )}
       >
         <div className="relative overflow-hidden">
-          <img
-            src={project.cover}
-            alt={project.shortDescription}
-            className="aspect-video w-full object-cover outline outline-1 -outline-offset-1 outline-fg/10 transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-            loading="lazy"
-            decoding="async"
-          />
+          {project.cover ? (
+            <img
+              src={project.cover}
+              alt={coverMedia?.alt ?? `${project.name} project cover`}
+              className="aspect-video w-full object-cover outline outline-1 -outline-offset-1 outline-fg/10 transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+              loading="lazy"
+              decoding="async"
+            />
+          ) : (
+            <div
+              role="img"
+              aria-label={`${project.name}: تصویر پروژه هنوز ارائه نشده است`}
+              className="flex aspect-video items-center justify-center bg-accent-soft px-5 text-center"
+            >
+              <div>
+                <p className="text-xs tracking-label text-accent" dir="ltr">
+                  {project.name}
+                </p>
+                <p className="mt-2 text-sm text-muted">تصویر اصلی هنوز ارائه نشده است</p>
+              </div>
+            </div>
+          )}
           <span className="absolute top-3 right-3 rounded-xs bg-bg/90 px-2 py-1 text-2xs tracking-label text-muted">
             {project.categoryFa}
           </span>
@@ -54,6 +70,9 @@ export function ProjectCard({
           <p className="mt-3 text-sm leading-normal text-subtle">
             {project.shortDescription}
           </p>
+          {project.status === "placeholder" ? (
+            <p className="mt-3 text-xs text-accent">جزئیات پروژه در انتظار تکمیل</p>
+          ) : null}
           <ul className="mt-4 flex flex-wrap gap-1.5" dir="ltr">
             {project.technologies.map((tech) => (
               <li

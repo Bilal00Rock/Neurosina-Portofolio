@@ -51,10 +51,19 @@ export type Project = {
   roleFa: string;
   roleEn: string;
   technologies: string[];
-  cover: string;
+  cover?: string;
   media: MediaItem[];
   caseStudy: CaseStudy;
+  status?: "placeholder" | "in-progress" | "completed";
+  links?: {
+    liveDemo?: string;
+    sourceCode?: string;
+    officialWebsite?: { label: string; url: string };
+  };
 };
+
+const pendingProjectDetails =
+  "این اطلاعات هنوز دریافت نشده است و پس از تأیید جزئیات پروژه تکمیل می‌شود.";
 
 export const projects: Project[] = [
   {

@@ -14,14 +14,52 @@ import {
 } from "lucide-react";
 
 export const company = {
-  nameFa: "نوروسینا",
-  nameEn: "NeuroSina",
-  legalName: "نواندیشان اَوان سینا",
-  kicker: "NEUROSINA / PROJECT PORTFOLIO",
-  tagline: "هوش مصنوعی، داده و مهندسی نرم‌افزار برای ساخت محصولات واقعی",
+  nameFa: "استودیو ما",
+  nameEn: "Our Studio",
+  tagline: "ما نرم‌افزار و هوش مصنوعی را به محصولات دیجیتال کاربردی تبدیل می‌کنیم",
   description:
-    "مروری بر پروژه‌های نرم‌افزاری، هوش مصنوعی و پلتفرم‌های هوشمندی که در نوروسینا طراحی و توسعه داده شده‌اند.",
+    "ما در طراحی و توسعه نرم‌افزار، هوش مصنوعی و محصولات دیجیتال کار می‌کنیم؛ اینجا نمونه‌هایی از پروژه‌ها و مسیر ساخت آن‌ها را می‌بینید.",
+  contactEmail: "",
+  socialLinks: [] as { label: string; href: string }[],
+  publicUrl: "",
 };
+
+export const seoDefaults = {
+  title: `${company.nameEn} | نمونه‌کار نرم‌افزار و هوش مصنوعی`,
+  description: company.description,
+  image: "/og.jpg",
+};
+
+export function createSeoHead(
+  title: string,
+  description: string,
+  path = "/",
+) {
+  const canonicalUrl = company.publicUrl
+    ? new URL(path, `${company.publicUrl.replace(/\/+$/, "")}/`).toString()
+    : undefined;
+  const imageUrl = canonicalUrl
+    ? new URL(seoDefaults.image, `${company.publicUrl.replace(/\/+$/, "")}/`).toString()
+    : undefined;
+
+  return {
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: company.nameEn },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      ...(canonicalUrl ? [{ property: "og:url", content: canonicalUrl }] : []),
+      ...(imageUrl ? [{ property: "og:image", content: imageUrl }] : []),
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      ...(imageUrl ? [{ name: "twitter:image", content: imageUrl }] : []),
+    ],
+    links: canonicalUrl ? [{ rel: "canonical", href: canonicalUrl }] : [],
+  };
+}
 
 export const navItems = [
   { href: "#capabilities", label: "توانمندی‌ها" },
@@ -188,4 +226,3 @@ export const techStack: TechItem[] = [
 
 export const contributorNote =
   "جزئیات نقش افراد در هر پروژه در این بخش قابل ثبت است و هنوز تکمیل نشده است.";
-

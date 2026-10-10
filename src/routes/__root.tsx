@@ -1,24 +1,25 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
+import { createSeoHead, seoDefaults } from "@/data/site";
 import appCss from "../styles.css?url";
-
-const APP_NAME = "نوروسینا | نمونه پروژه‌ها";
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: APP_NAME },
-      {
-        name: "description",
-        content:
-          "مروری بر پروژه‌های نرم‌افزاری، هوش مصنوعی و پلتفرم‌های هوشمندی که در نوروسینا طراحی و توسعه داده شده‌اند.",
-      },
+      ...createSeoHead(
+        seoDefaults.title,
+        seoDefaults.description,
+      ).meta,
       { name: "theme-color", content: "#F4F5F3" },
     ],
     links: [
+      ...createSeoHead(
+        seoDefaults.title,
+        seoDefaults.description,
+      ).links,
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
