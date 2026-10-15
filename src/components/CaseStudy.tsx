@@ -88,7 +88,7 @@ export function CaseStudy({ project }: { project: Project }) {
             <h1 className="mt-3 text-display" dir="ltr">
               {project.name}
             </h1>
-            <p className="mt-4 max-w-2xl text-lg leading-normal text-muted">
+            <p dir="ltr" className="mt-4 max-w-2xl text-lg leading-normal text-muted">
               {project.englishDescription}
             </p>
             <p className="mt-3 max-w-2xl text-base leading-normal text-fg">
