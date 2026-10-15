@@ -21,7 +21,7 @@ function Frame({
             <img
               src={item.src}
               alt={item.alt}
-              className="aspect-9/16 w-full object-cover outline outline-1 -outline-offset-1 outline-fg/10 transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+              className="aspect-9/19 w-full object-cover outline outline-1 -outline-offset-1 outline-fg/10 transition-transform duration-500 ease-out group-hover:scale-[1.03]"
               loading={priority ? "eager" : "lazy"}
               decoding="async"
             />
